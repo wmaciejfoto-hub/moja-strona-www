@@ -198,6 +198,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   
   /* Wymuszenie proporcji 4/5 bezpośrednio na obrazku, co chroni przed zapadaniem w kolumnach */
   aspect-ratio: var(--ar, 4 / 5); 
+transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 }
 
 /* ===== OBAWY (3 kolumny) ===== */
