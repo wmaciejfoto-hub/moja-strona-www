@@ -169,39 +169,19 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* ===== ZDJĘCIA + ZASTĘPNIKI ===== */
 .ph {
-  position: relative; 
-  display: block; 
-  overflow: hidden;
+  position: relative; display: block; overflow: hidden;
   border-radius: var(--radius-sm);
+  aspect-ratio: var(--ar, 4 / 5);
   background: var(--ph-bg, radial-gradient(110% 70% at 50% 0%, #2F6FDB 0%, #0A2342 52%, #04060B 100%));
   border: 1px solid var(--line-soft);
-  width: 100%; 
-  
-  /* MOBILNY SERCE-FIX: Porzucamy absolutne pozycjonowanie na rzecz naturalnego układu */
-  height: auto; 
 }
-
 .ph::after {
   content: attr(data-label);
   position: absolute; left: 18px; right: 18px; bottom: 16px;
   font-size: 0.8125rem; font-weight: 600; line-height: 1.35;
   color: var(--ice); opacity: .9; text-align: left;
-  z-index: 2;
 }
-
-.ph img { 
-  /* USUNIĘTO: position: absolute i inset: 0 */
-  display: block;
-  width: 100%; 
-  height: auto; 
-  object-fit: cover; 
-  
-  /* Wymuszenie proporcji 4/5 bezpośrednio na obrazku, co chroni przed zapadaniem w kolumnach */
-  aspect-ratio: var(--ar, 4 / 5); 
-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: transform;
-}
+.ph img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
 
 /* ===== OBAWY (3 kolumny) ===== */
 .cols-3 { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
@@ -358,4 +338,3 @@ transform: translateZ(0);
   .js .reveal { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
-
