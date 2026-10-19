@@ -149,15 +149,7 @@
           - --ar to proporcje zastępnika (np. 4/5 = pionowe, 1/1 = kwadrat).
         -->
         <ul class="gallery reveal" aria-label="Galeria zdjęć">
-          <li>
-  <button type="button" class="g-item" aria-label="Powiększ zdjęcie 1">
-    <!-- FIX 1: Zamiana span na div, dodanie display: block -->
-    <div class="ph" data-label="Twoje zdjęcie 1" style="--ar:4/5; display: block; width: 100%;">
-      <!-- FIX 2: Usunięcie loading="lazy" oraz onerror na czas testu -->
-      <img src="images/galeria-01.jpg" alt="Subtelny portret kobiety w świetle dziennym" width="1200" height="1500" decoding="async">
-    </div>
-  </button>
-</li>
+          <li><button type="button" class="g-item" aria-label="Powiększ zdjęcie 1"><span class="ph" data-label="Twoje zdjęcie 1" style="--ar:4/5"><img src="images/galeria-01.jpg" alt="Subtelny portret kobiety w świetle dziennym" width="1200" height="1500" loading="lazy" decoding="async" onerror="this.hidden=true"></span></button></li>
           <li><button type="button" class="g-item" aria-label="Powiększ zdjęcie 2"><span class="ph" data-label="Twoje zdjęcie 2" style="--ar:2/3"><img src="images/galeria-02.jpg" alt="Filmowy portret kobiety w półcieniu" width="1000" height="1500" loading="lazy" decoding="async" onerror="this.hidden=true"></span></button></li>
           <li><button type="button" class="g-item" aria-label="Powiększ zdjęcie 3"><span class="ph" data-label="Twoje zdjęcie 3" style="--ar:1/1"><img src="images/galeria-03.jpg" alt="Naturalny portret kobiety w zieleni" width="1200" height="1200" loading="lazy" decoding="async" onerror="this.hidden=true"></span></button></li>
           <li><button type="button" class="g-item" aria-label="Powiększ zdjęcie 4"><span class="ph" data-label="Twoje zdjęcie 4" style="--ar:3/4"><img src="images/galeria-04.jpg" alt="Portret z bliska w miękkim świetle" width="1200" height="1600" loading="lazy" decoding="async" onerror="this.hidden=true"></span></button></li>
