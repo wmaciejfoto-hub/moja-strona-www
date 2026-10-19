@@ -1,0 +1,18 @@
+FOLDER NA ZDJĘCIA
+=================
+
+Wrzuć tutaj swoje zdjęcia i nazwij je dokładnie tak (małymi literami, bez polskich znaków):
+
+  hero.jpg         zdjęcie na samej górze strony (pionowe, ok. 1600 x 2000 px)
+  portret.jpg      Twój portret w sekcji "Poznajmy się" (pionowy, ok. 1200 x 1500 px)
+  galeria-01.jpg   zdjęcia do galerii
+  galeria-02.jpg   ...
+  ...
+  galeria-12.jpg   (maksymalnie 12 zdjęć)
+
+Zasady:
+- Format JPG, dłuższy bok ok. 1600 px, jakość ok. 80, najlepiej do ok. 300 KB jedno zdjęcie.
+- Do zmniejszania zdjęć użyj darmowego narzędzia: https://squoosh.app
+- Brakujące zdjęcie? Strona pokaże ładne niebieskie tło zastępcze, więc nic się nie psuje.
+- Masz mniej niż 12 zdjęć do galerii? Usuń niepotrzebne bloki <li>…</li> w pliku index.html
+  (szczegóły w README.md).
