@@ -169,20 +169,36 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* ===== ZDJĘCIA + ZASTĘPNIKI ===== */
 .ph {
-  position: relative; display: block; overflow: hidden;
+  position: relative; 
+  display: block; 
+  overflow: hidden;
   border-radius: var(--radius-sm);
-  aspect-ratio: var(--ar, 4 / 5);
   background: var(--ph-bg, radial-gradient(110% 70% at 50% 0%, #2F6FDB 0%, #0A2342 52%, #04060B 100%));
   border: 1px solid var(--line-soft);
+  width: 100%;
+  
+  /* FIX: Nadajemy kontenerowi fizyczną wysokość przez padding, co jest w 100% wspierane przez telefony */
+  height: 0;
+  padding-bottom: 125%; /* To daje idealne proporcje 4:5 (5/4 * 100) */
 }
+
 .ph::after {
   content: attr(data-label);
   position: absolute; left: 18px; right: 18px; bottom: 16px;
   font-size: 0.8125rem; font-weight: 600; line-height: 1.35;
   color: var(--ice); opacity: .9; text-align: left;
+  z-index: 2;
 }
-.ph img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
 
+.ph img { 
+  position: absolute; 
+  inset: 0; 
+  z-index: 1; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  display: block;
+}
 /* ===== OBAWY (3 kolumny) ===== */
 .cols-3 { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
 .col { display: flex; flex-direction: column; gap: 8px; min-width: 0; border-top: 2px solid #2F6FDB; padding-top: 20px; }
