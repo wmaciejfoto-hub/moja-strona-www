@@ -169,19 +169,33 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* ===== ZDJĘCIA + ZASTĘPNIKI ===== */
 .ph {
-  position: relative; display: block; overflow: hidden;
+  position: relative; 
+  display: block; 
+  overflow: hidden;
   border-radius: var(--radius-sm);
   aspect-ratio: var(--ar, 4 / 5);
   background: var(--ph-bg, radial-gradient(110% 70% at 50% 0%, #2F6FDB 0%, #0A2342 52%, #04060B 100%));
   border: 1px solid var(--line-soft);
+  /* FIX DLA MOBILNYCH: Wymuszenie szerokości kontenera */
+  width: 100%; 
 }
 .ph::after {
   content: attr(data-label);
   position: absolute; left: 18px; right: 18px; bottom: 16px;
   font-size: 0.8125rem; font-weight: 600; line-height: 1.35;
   color: var(--ice); opacity: .9; text-align: left;
+  z-index: 2; /* Poprawka: etykieta tekstowa będzie zawsze nad zdjęciem */
 }
-.ph img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
+.ph img { 
+  position: absolute; 
+  inset: 0; 
+  z-index: 1; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  /* FIX DLA MOBILNYCH: Zabezpieczenie przed zerową wysokością */
+  min-height: 100%; 
+}
 
 /* ===== OBAWY (3 kolumny) ===== */
 .cols-3 { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
